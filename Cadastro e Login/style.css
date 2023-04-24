@@ -1,0 +1,138 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1em;
+}
+
+body {
+    background-color: white;
+}
+
+.card-container {
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 250px;
+    margin-right: 25px;
+    display: inline-block;
+}
+
+.card input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    right: 235px;
+}
+
+label {
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.info-card {
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* faz a quebra da sequencia para deixar responsivo */
+    flex-wrap: wrap;
+}
+
+.acesso {
+    display: flex;
+    /* alinhar verticalmente e centralizar */
+    justify-content: center;
+    /* usada para centralizar horizontalmente */
+    align-items: center;
+    /* centralizar verticalmente */
+    margin: 20px 0;
+}
+
+.acesso-titulo {
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+hr {
+    flex: 1;
+    /*  usada para que as linhas ocupem todo o espaço disponível restante dentro do container  */
+    height: 1px;
+    background-color: #dadada;
+    border: none;
+}
+
+.imagens {
+    text-align: center;
+}
+
+img {
+    width: 33px;
+    margin: 0 10px;
+}
+
+/* Pros inputs continuarem no centro msm em telas grandes */
+.inputs {
+    text-align: center;
+}
+
+input {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px 20px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #dadada;
+    transition: .2s;
+}
+
+input:focus {
+    letter-spacing: 1px;
+    /* dar um espaço entre as letras de 2px */
+    border-color: red;
+    outline: none;
+    /* quando for clicado muda a cor da borda para azul claro */
+}
+
+.criarConta {
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* butao de criar conta */
+.criar {
+    width: 380px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 5px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.info {
+    text-align: center;
+    font-size: 0.75em;
+    padding: 0 50px;
+    width: 280px;
+}
+
+.rodape {
+    color: rgb(58, 58, 212);
+    font-weight: bold;
+    cursor: pointer;
+}
