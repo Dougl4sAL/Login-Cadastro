@@ -11,8 +11,7 @@ body {
 
 .container {
     margin: 0 auto;
-    /* faz a quebra da sequencia para deixar responsivo */
-    flex-wrap: wrap;
+    /* centraliza todos os elementos na tela */
     text-align: center;
 
     margin: 30px auto 0;
@@ -27,6 +26,10 @@ h1 {
 
 .card-container {
     display: flex;
+    /* Causando conflito ======================== */
+    flex-wrap: wrap;
+    /* esta causando conflito, deixando o terceiro card na parte de baixo */
+    justify-content: center;
 }
 
 .card {
@@ -38,6 +41,12 @@ h1 {
     width: 250px;
     margin-right: 25px;
     display: inline-block;
+}
+
+.card {
+    flex-basis: calc(33.33% - 20px);
+    /* Para que cada card tenha uma margem à esquerda e à direita de 10px */
+    margin: 10px;
 }
 
 .card input[type=checkbox] {
@@ -162,24 +171,26 @@ input:focus {
 
 /* ================ Responsividades ================ */
 
-/* Isso fará com que cada card ocupe 100% da largura da tela em telas menores do que 600px e remova a margem direita. */
-@media screen and (max-width: 600px) {
+/* Tela menor q 768px, os cards ocuparão 50% do espaço disponível */
+@media screen and (max-width: 768px) {
     .card {
-        flex-basis: 100%;
-        margin-right: 0;
+        flex-basis: calc(50% - 20px);
     }
 }
 
-/* cada card tenha uma largura máxima de 300px em telas maiores do que 768px */
-@media screen and (min-width: 768px) {
+/* quando a largura da tela for menor que 480px, cada card ocupará 80% do espaço horizontalmente */
+@media screen and (max-width: 480px) {
     .card {
-        max-width: 300px;
+        flex-basis: 80%;
+        margin: 10px 0;
     }
 }
 
 /* largura dos inputs seja reduzida para 80% da largura da tela em telas menores do que 600px */
 @media screen and (max-width: 600px) {
-    .inputs input, .criar {
+
+    .inputs input,
+    .criar {
         width: 80%;
     }
 }
