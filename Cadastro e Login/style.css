@@ -2,22 +2,40 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1em;
     margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: white;
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* faz a quebra da sequencia para deixar responsivo */
+/* flex-wrap: wrap; */
+    text-align: center;
+}
+
 .card-container {
-    margin-top: 50px;
+    display: flex;
 }
 
 .card {
+    flex-basis: 33%;
+/* cada um deve ocupar um terço da largura da div card-container. */
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 15px #bebebe,
+        -4px -4px 15px #ffffff;
     padding: 10px;
     position: relative;
-    text-align: center;
     width: 250px;
     margin-right: 25px;
     display: inline-block;
@@ -26,9 +44,10 @@ body {
 .card input[type=checkbox] {
     width: 15px;
     height: 15px;
+    
     position: absolute;
     top: 15px;
-    right: 235px;
+    left: 15px;
 }
 
 label {
@@ -43,13 +62,10 @@ label {
     margin-bottom: 10px;
 }
 
-.formulario {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    /* faz a quebra da sequencia para deixar responsivo */
-    flex-wrap: wrap;
+.formasLoginCadastro {
+    width: 350px;
+    margin: 0 auto;
+    
 }
 
 .acesso {
@@ -68,7 +84,7 @@ label {
 }
 
 hr {
-    flex: 1;
+    width: 100%;
     /*  usada para que as linhas ocupem todo o espaço disponível restante dentro do container  */
     height: 1px;
     background-color: #dadada;
@@ -90,6 +106,9 @@ img {
 }
 
 input {
+    box-sizing: border-box;
+    /* Impedi q os elementos filhos ultapassem o tamanho do pai */
+
     border-radius: 5px;
     margin: 5px 0;
     padding: 10px 20px;
@@ -110,11 +129,12 @@ input:focus {
 .criarConta {
     margin: 15px 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* butao de criar conta */
 .criar {
-    width: 380px;
+    width: 100%;
     border-radius: 30px;
     background-color: red;
     color: white;
@@ -130,6 +150,7 @@ input:focus {
     font-size: 0.75em;
     padding: 0 50px;
     width: 280px;
+    margin: 0 auto;
 }
 
 .rodape {
