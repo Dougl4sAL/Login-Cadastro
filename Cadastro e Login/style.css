@@ -24,30 +24,24 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* ======= Inicio Card ======= */
+
 .card-container {
     display: flex;
-    /* Causando conflito ======================== */
-    /* flex-wrap: wrap; */
-    /* esta causando conflito, deixando o terceiro card na parte de baixo */
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .card {
     border-radius: 10px;
-    box-shadow: 4px 4px 15px #bebebe,
-        -4px -4px 15px #ffffff;
+    box-shadow: 4px 4px 10px #bebebe,
+        -4px -4px 10px #ffffff;
     padding: 10px;
     position: relative;
     width: 250px;
-    margin-right: 25px;
     display: inline-block;
 }
 
 .card:last-child {
-    margin-right: 0;
-}
-
-.card:first-child {
     margin-right: 0;
 }
 
@@ -60,7 +54,7 @@ h1 {
 .card input[type=checkbox] {
     width: 15px;
     height: 15px;
-
+    cursor: pointer;
     position: absolute;
     top: 15px;
     left: 15px;
@@ -85,6 +79,8 @@ label {
     margin: 0 auto;
 
 }
+
+/* ======== Começo Acesso e Ou ======== */
 
 .acesso {
     display: flex;
@@ -116,9 +112,15 @@ hr {
 img {
     width: 33px;
     margin: 0 10px;
+    cursor: pointer;
 }
 
-/* Pros inputs continuarem no centro msm em telas grandes */
+img:hover {
+    scale: 1.2;
+}
+
+/* ======== Começo Inputs ======== */
+
 .inputs {
     text-align: center;
 }
@@ -139,7 +141,7 @@ input {
 input:focus {
     letter-spacing: 1px;
     /* dar um espaço entre as letras de 2px */
-    border-color: red;
+    border-color: rgb(29, 27, 27);
     outline: none;
     /* quando for clicado muda a cor da borda para azul claro */
 }
@@ -165,6 +167,8 @@ input:focus {
     cursor: pointer;
 }
 
+/* ======== Fim Inputs ======== */
+
 .info {
     text-align: center;
     font-size: 0.75em;
@@ -188,7 +192,7 @@ input:focus {
         flex-basis: calc(50% - 20px);
         flex-wrap: wrap;
     }
-
+    
     .card-container {
         flex-direction: column;
         align-items: center;

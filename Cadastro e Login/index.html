@@ -19,7 +19,7 @@
             <div class="card-container">
 
                 <div class="card" >
-                    <input type="checkbox" id="box-card">
+                    <input type="checkbox" id="box-card" class="opcao">
                     <label for="checkbox">Sou designer</label>
                     <br>
                     <label for="checkbox">Iniciante</label>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="card">
-                    <input type="checkbox" id="box-card">
+                    <input type="checkbox" id="box-card" class="opcao">
                     <label for="checkbox">Sou designer</label>
                     <br>
                     <label for="checkbox">experiente</label>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="card">
-                    <input type="checkbox" id="box-card">
+                    <input type="checkbox" id="box-card" class="opcao">
                     <label for="checkbox">Sou dono</label>
                     <br>
                     <label for="checkbox">de um negócio</label>
@@ -69,9 +69,9 @@
 
                     <input type="text" id="nome" placeholder="Nome completo" required>
                     <br>
-                    <input type="email" id="email" placeholder="Seu email" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
                     <br>
-                    <input type="tel" id="telefo" placeholder="(99) 9 87654-3219" required>
+                    <input type="tel" id="telefo" placeholder="Telefone" required>
                     <br>
                     <input type="password" id="senha" placeholder="Senha" required>
                     <br>
@@ -91,6 +91,22 @@
         </div>
 
     </form>
+
+    <script>
+        const checkboxes = document.querySelectorAll(".opcao");
+
+for (let i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].addEventListener("change", function() {
+    if (this.checked) {
+      for (let j = 0; j < checkboxes.length; j++) {
+        if (i !== j) {
+          checkboxes[j].checked = false;
+        }
+      }
+    }
+  });
+}
+    </script>
 </body>
 
 </html>
