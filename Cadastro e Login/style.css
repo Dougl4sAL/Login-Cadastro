@@ -27,7 +27,7 @@ h1 {
 .card-container {
     display: flex;
     /* Causando conflito ======================== */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* esta causando conflito, deixando o terceiro card na parte de baixo */
     justify-content: center;
 }
@@ -43,8 +43,16 @@ h1 {
     display: inline-block;
 }
 
+.card:last-child {
+    margin-right: 0;
+}
+
+.card:first-child {
+    margin-right: 0;
+}
+
 .card {
-    flex-basis: calc(33.33% - 20px);
+    flex-basis: calc(100% - 50px) / 3;
     /* Para que cada card tenha uma margem à esquerda e à direita de 10px */
     margin: 10px;
 }
@@ -69,6 +77,8 @@ label {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/* ===== Fim card ======= */
 
 .formasLoginCadastro {
     width: 390px;
@@ -161,6 +171,7 @@ input:focus {
     padding: 0 50px;
     width: 280px;
     margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .rodape {
@@ -175,6 +186,12 @@ input:focus {
 @media screen and (max-width: 768px) {
     .card {
         flex-basis: calc(50% - 20px);
+        flex-wrap: wrap;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -183,6 +200,7 @@ input:focus {
     .card {
         flex-basis: 80%;
         margin: 10px 0;
+        flex-wrap: wrap;
     }
 }
 
